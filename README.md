@@ -51,6 +51,7 @@ by day the Chef, by night the Dev.
 | 🐙 GitHub | [@giosci1994](https://github.com/giosci1994) |
 | 🌐 Website | [giosci1994.github.io](https://giosci1994.github.io) |
 | 🌱 Arborae | [arborae.github.io](https://arborae.github.io) |
+| 🎮 Discord | [profile](https://discord.com/users/414840008977940481) |
 | 🎮 Steam | [id/giosci1994](https://steamcommunity.com/id/giosci1994/) |
 | 🎮 Epic Games | [Giosci_](https://store.epicgames.com/u/9fa3b70f028c4b80af578f31c6dca246) |
 | ☕ Buy Me a Coffee | [giosci1994u](https://buymeacoffee.com/giosci1994u) |

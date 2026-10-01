@@ -446,6 +446,7 @@ button.link-main {
 .tile-bmc { background: #ffdd00; color: #000; box-shadow: none; }
 .tile-paypal { background: #003087; }
 .tile-ha { background: #18bcf2; box-shadow: none; }
+.tile-discord { background: #5865f2; box-shadow: none; }
 .tile-steam { background: linear-gradient(150deg, #1b2838, #2a475e); }
 .tile-epic { background: #313131; }
 .tile-img { background: none; box-shadow: none; }

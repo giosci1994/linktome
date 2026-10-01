@@ -445,6 +445,7 @@ button.link-main {
 .tile-github { background: #181717; }
 .tile-bmc { background: #ffdd00; color: #000; box-shadow: none; }
 .tile-paypal { background: #003087; }
+.tile-ha { background: #18bcf2; box-shadow: none; }
 .tile-img { background: none; box-shadow: none; }
 .tile-img img { width: 44px; height: 44px; }
 .tile-img img.tile-arborae { width: 50px; height: 50px; max-width: none; }
@@ -655,6 +656,15 @@ a.link:hover .link-go {
 }
 
 .repo-extra::after { content: ' ↗'; }
+
+/* Più link sulla stessa card: restano insieme, a destra */
+.repo-links {
+  display: inline-flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.repo-links .repo-extra { margin-left: 0; }
 
 .repo-extra:hover { text-decoration: underline; }
 

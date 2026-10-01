@@ -47,6 +47,7 @@ by day the Chef, by night the Dev.
 | 💼 LinkedIn | [in/giovannilacascia](https://www.linkedin.com/in/giovannilacascia/) |
 | 𝕏 X | [@giosci1994](https://x.com/giosci1994) |
 | ✈️ Telegram | [@giovannilacascia](https://t.me/giovannilacascia) |
+| 🏠 Home Assistant Community | [@giosci1994](https://community.home-assistant.io/u/giosci1994/summary) |
 | 🐙 GitHub | [@giosci1994](https://github.com/giosci1994) |
 | 🌐 Website | [giosci1994.github.io](https://giosci1994.github.io) |
 | 🌱 Arborae | [arborae.github.io](https://arborae.github.io) |

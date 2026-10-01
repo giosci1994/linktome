@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2ea043" />
+      <stop offset="1" stop-color="#1f6feb" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Shape (App Icon style) -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#0b0f14" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  
+  <!-- Main Circle (Tree Background) -->
+  <circle cx="32" cy="32" r="18" fill="url(#grad)" />
+  
+  <!-- Tree Structure (White) -->
+  <g stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+    <!-- Center (Convergence) Point is approx 32, 40 -->
+    <!-- Top Branch -->
+    <line x1="32" y1="38" x2="32" y2="22" />
+    <!-- Left Branch -->
+    <line x1="32" y1="38" x2="22" y2="30" />
+    <!-- Right Branch -->
+    <line x1="32" y1="38" x2="42" y2="30" />
+  </g>
+  
+  <!-- Nodes (Dots) -->
+  <g fill="#fff">
+    <circle cx="32" cy="22" r="2.5" />
+    <circle cx="22" cy="30" r="2.5" />
+    <circle cx="42" cy="30" r="2.5" />
+  </g>
+</svg>

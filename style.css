@@ -446,6 +446,8 @@ button.link-main {
 .tile-bmc { background: #ffdd00; color: #000; box-shadow: none; }
 .tile-paypal { background: #003087; }
 .tile-ha { background: #18bcf2; box-shadow: none; }
+.tile-steam { background: linear-gradient(150deg, #1b2838, #2a475e); }
+.tile-epic { background: #313131; }
 .tile-img { background: none; box-shadow: none; }
 .tile-img img { width: 44px; height: 44px; }
 .tile-img img.tile-arborae { width: 50px; height: 50px; max-width: none; }
@@ -751,7 +753,8 @@ a.link:hover .link-go {
 .group:nth-of-type(1) { animation-delay: 0.12s; }
 .group:nth-of-type(2) { animation-delay: 0.19s; }
 .group:nth-of-type(3) { animation-delay: 0.26s; }
-.foot { animation-delay: 0.33s; }
+.group:nth-of-type(4) { animation-delay: 0.33s; }
+.foot { animation-delay: 0.4s; }
 
 @media (prefers-reduced-motion: reduce) {
   *,

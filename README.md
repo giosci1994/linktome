@@ -4,8 +4,6 @@
 A tiny link-in-bio page in the same style as [my personal site](https://giosci1994.github.io):
 by day the Chef, by night the Dev.
 
-**🇬🇧 English** · [🇮🇹 Italiano](#italiano)
-
 <p align="center">
   <a href="https://giosci1994.github.io/linktome/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fgiosci1994.github.io%2Flinktome%2F&label=giosci1994.github.io%2Flinktome&up_message=online&down_message=offline" alt="Website status" /></a>
   <img src="https://img.shields.io/badge/GitHub%20Pages-live-2ea44f?logo=githubpages&logoColor=white" alt="GitHub Pages" />
@@ -108,71 +106,6 @@ The **source code** (HTML/CSS/JS) is released under the [GNU GPLv3 License](LICE
 > `og-image.jpg`, `preview.webp`), the personal branding and the Arborae logo are
 > © their owners, all rights reserved. Brand icons are trademarks of their respective owners.
 
-<br>
-
----
 ---
 
-<a id="italiano"></a>
-
-# 🇮🇹 Italiano
-
-**Tutti i miei link in un posto — Giovanni La Cascia, chef di professione, dev per passione.**
-Una piccola pagina "link in bio" con lo stesso stile del [mio sito](https://giosci1994.github.io):
-di giorno lo Chef, di notte il Dev.
-
-<p align="center"><strong>🌐 Online: <a href="https://giosci1994.github.io/linktome/">giosci1994.github.io/linktome</a></strong></p>
-
-## ✨ In breve
-
-- 🌗 **Giorno = Chef, notte = Dev** — carta, ambra e serif di giorno; verde scuro e mono di
-  notte. Segue il tema del sistema e, toccando la foto, si gira dall'altra parte.
-- 🐙 **Card GitHub interattiva** — toccandola si apre sui repository in evidenza, con
-  linguaggio, stelle e ultimo aggiornamento presi dal vivo dall'API di GitHub.
-- 🌍 **Bilingue IT/EN** — sceglie la lingua del browser e condivide la scelta con il sito principale.
-- 📧 **Email al riparo dai bot** — l'indirizzo è composto in JavaScript, con un tasto per copiarlo.
-- 📤 **Tasto condividi** — il menu di condivisione nativo sul telefono, copia del link altrove.
-- ⚡ **Zero build step** — solo HTML + CSS + JS vanilla. I link funzionano anche senza JavaScript.
-- ♿ **Accessibile** — pulsanti e liste veri, stati ARIA, focus da tastiera,
-  rispetta `prefers-reduced-motion`.
-
-## ✏️ Aggiungere o cambiare un link
-
-1. Copia un `<li>` dentro una lista `.links` di `index.html` e cambia `href`, titolo e sottotitolo.
-2. Scegli il colore del riquadro: una regola `.tile-tuobrand` in `style.css` e, se serve, un
-   `<symbol>` per l'icona in cima a `index.html` (icone dei brand da [Simple Icons](https://simpleicons.org), CC0).
-3. I testi da tradurre hanno l'attributo `data-i18n="chiave"`, con la chiave in `it` e in `en` dentro `app.js`.
-
-I **repository in evidenza** sono gli `<li class="repo" data-repo="nome">` dentro la card GitHub:
-il nome deve essere quello del repository, stelle, linguaggio e ultimo aggiornamento arrivano da soli.
-
-## 🛠️ Avvio in locale
-
-```bash
-git clone https://github.com/giosci1994/linktome.git
-cd linktome
-python -m http.server 8000        # → http://localhost:8000
-```
-
-## 🚀 Deploy
-
-GitHub Pages, **Deploy from a branch** → `main` / `(root)`. Ogni push su `main` va online su
-**https://giosci1994.github.io/linktome/** in un paio di minuti.
-
-## ☕ Supporta il progetto
-
-Se uno dei miei progetti ti è utile, puoi offrirmi un caffè.
-
-<a href="https://buymeacoffee.com/giosci1994u"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy Me a Coffee" /></a>
-
-## 📄 Licenza
-
-Il **codice sorgente** (HTML/CSS/JS) è rilasciato con [licenza GNU GPLv3](LICENSE).
-
-> ℹ️ **Non coperti da GPLv3:** le foto personali e l'avatar (`avatar-*.webp`, `og-image.jpg`,
-> `preview.webp`), il personal branding e il logo di Arborae sono © dei rispettivi proprietari,
-> tutti i diritti riservati. Le icone dei brand sono marchi dei rispettivi proprietari.
-
----
-
-<p align="center"><sub>fatto con ❤️ tra fornelli e container · made with ❤️ between stoves and containers</sub></p>
+<p align="center"><sub>made with ❤️ between stoves and containers</sub></p>

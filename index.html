@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
@@ -40,6 +40,13 @@
         t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
       }
       document.documentElement.dataset.theme = t;
+    })();
+    /* Entrata con Motion solo se il movimento è permesso: se Motion non arriva, dopo 1,5 s si vede tutto lo stesso */
+    (function () {
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var root = document.documentElement;
+      root.classList.add('motion-ready');
+      window.__linktomeReveal = setTimeout(function () { root.classList.remove('motion-ready'); }, 1500);
     })();
   </script>
   <script src="app.js" defer></script>
@@ -93,7 +100,7 @@
   </svg>
 
   <main class="page">
-    <nav class="topbar" aria-label="Opzioni" data-i18n-aria="ui.options">
+    <nav class="topbar" aria-label="Opzioni" data-i18n-aria="ui.options" data-reveal>
       <button class="icon-btn" id="share" type="button" aria-label="Condividi" data-i18n-aria="ui.share">
         <svg aria-hidden="true"><use href="#i-share" /></svg>
       </button>
@@ -109,7 +116,7 @@
       </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" data-reveal>
       <button class="avatar" id="avatar" type="button" aria-label="Cambia tema">
         <span class="avatar-flip">
           <img class="face face-chef" src="assets/avatar-chef.webp" width="160" height="160" alt="" />
@@ -134,7 +141,7 @@
     </header>
 
     <!-- Social & contatti -->
-    <section class="group" aria-labelledby="g-social">
+    <section class="group" aria-labelledby="g-social" data-reveal>
       <h2 class="group-label" id="g-social" data-i18n="g.social">Social &amp; contatti</h2>
       <ul class="links">
         <li>
@@ -208,7 +215,7 @@
     </section>
 
     <!-- Progetti -->
-    <section class="group" aria-labelledby="g-code">
+    <section class="group" aria-labelledby="g-code" data-reveal>
       <h2 class="group-label" id="g-code" data-i18n="g.code">Progetti</h2>
       <ul class="links">
         <li class="gh card" id="gh">
@@ -330,7 +337,7 @@
     </section>
 
     <!-- Gaming -->
-    <section class="group" aria-labelledby="g-gaming">
+    <section class="group" aria-labelledby="g-gaming" data-reveal>
       <h2 class="group-label" id="g-gaming">Gaming</h2>
       <ul class="links">
         <li>
@@ -367,7 +374,7 @@
     </section>
 
     <!-- Supporto -->
-    <section class="group" aria-labelledby="g-support">
+    <section class="group" aria-labelledby="g-support" data-reveal>
       <h2 class="group-label" id="g-support" data-i18n="g.support">Supporta il mio lavoro</h2>
       <ul class="links">
         <li>
@@ -393,8 +400,7 @@
       </ul>
     </section>
 
-    <footer class="foot">
-      <p data-i18n="foot.made">fatto con ❤️ tra fornelli e container</p>
+    <footer class="foot" data-reveal>
       <p>
         <a href="https://github.com/giosci1994/linktome" data-i18n="foot.source">codice sorgente</a>
         · © <span id="year">2026</span> Giovanni La Cascia
@@ -403,6 +409,43 @@
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Movimento facoltativo (motion.dev): senza, la pagina funziona uguale -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@14.10.1/dist/motion.js"
+    integrity="sha384-lnXs/o2QVHbH7aNA9JGkcMdW38AWVgMHWWrPU/fGgHi+eRj2j0a8va/1nlijpjHX" crossorigin="anonymous"
+    onerror="document.documentElement.classList.remove('motion-ready')"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var M = window.Motion;
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      clearTimeout(window.__linktomeReveal);
+      if (!M || reduce || !M.animate || !M.inView) {
+        root.classList.remove('motion-ready');
+        return;
+      }
+      var ease = [0.22, 1, 0.36, 1];
+      var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+      // Lo stato nascosto passa dalla classe agli stili in linea; poi ogni blocco sale di 8px quando entra
+      items.forEach(function (el) { el.style.opacity = '0'; });
+      root.classList.remove('motion-ready');
+      var batch = 0, batchTimer = null;
+      try {
+        items.forEach(function (el) {
+          M.inView(el, function () {
+            var delay = Math.min(batch, 5) * 0.05;
+            batch += 1;
+            clearTimeout(batchTimer);
+            batchTimer = setTimeout(function () { batch = 0; }, 120);
+            M.animate(el, { opacity: [0, 1], transform: ['translateY(8px)', 'translateY(0px)'] },
+              { duration: 0.4, delay: delay, ease: ease });
+          }, { amount: 0.1 });
+        });
+      } catch (e) {
+        items.forEach(function (el) { el.style.opacity = ''; el.style.transform = ''; });
+      }
+    })();
+  </script>
 </body>
 
 </html>

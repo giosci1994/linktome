@@ -33,7 +33,8 @@ by day the Chef, by night the Dev.
 - 📧 **Email kept away from bots** — the address is assembled in JavaScript, with a one-tap
   copy button.
 - 📤 **Share button** — native share sheet on phones, copy-to-clipboard elsewhere.
-- ⚡ **Zero build step** — plain HTML + CSS + vanilla JS. The links work even without JavaScript.
+- ⚡ **Zero build step** — plain HTML + CSS + vanilla JS. The only external script is [Motion](https://motion.dev)
+  (pinned, with SRI) for the scroll reveals. The links work even without JavaScript.
 - ♿ **Accessible** — real buttons and lists, ARIA states, keyboard focus,
   `prefers-reduced-motion` aware.
 
@@ -105,7 +106,3 @@ The **source code** (HTML/CSS/JS) is released under the [GNU GPLv3 License](LICE
 > ℹ️ **Not covered by GPLv3:** the personal photographs and avatar (`avatar-*.webp`,
 > `og-image.jpg`, `preview.webp`), the personal branding and the Arborae logo are
 > © their owners, all rights reserved. Brand icons are trademarks of their respective owners.
-
----
-
-<p align="center"><sub>made with ❤️ between stoves and containers</sub></p>

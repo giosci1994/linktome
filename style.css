@@ -75,35 +75,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Sfondi dei due temi su due livelli, così il cambio sfuma invece di scattare */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-
-body::before {
-  background:
-    radial-gradient(ellipse 90% 55% at 50% -12%, rgba(196, 144, 63, 0.26), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(165, 107, 33, 0.08), transparent 70%);
-}
-
-body::after {
-  opacity: 0;
-  background:
-    radial-gradient(ellipse 90% 55% at 50% -12%, rgba(52, 211, 153, 0.14), transparent 70%),
-    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 22px 22px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
-}
-
-[data-theme="night"] body::before { opacity: 0; }
-[data-theme="night"] body::after { opacity: 1; }
-
 /* Durante il cambio tema i colori sfumano (la carta dell'avatar ha la sua transizione) */
 .theme-anim *:not(.avatar-flip):not(.face),
 .theme-anim body {
@@ -189,9 +160,9 @@ button { font: inherit; color: inherit; }
 
 .lang-switch button {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   min-width: 36px;
   padding: 7px 10px;
   border: 0;
@@ -210,7 +181,7 @@ button { font: inherit; color: inherit; }
 /* ============ Hero ============ */
 .hero {
   text-align: center;
-  padding: 10px 0 8px;
+  padding: 8px 0;
 }
 
 .avatar {
@@ -218,7 +189,7 @@ button { font: inherit; color: inherit; }
   display: block;
   width: 136px;
   height: 136px;
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -256,7 +227,7 @@ button { font: inherit; color: inherit; }
 .face-dev {
   transform: rotateY(180deg);
   border: 3px solid rgba(52, 211, 153, 0.5);
-  box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.8), 0 0 70px -14px rgba(0, 181, 133, 0.55);
+  box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.8);
 }
 
 .avatar-badge {
@@ -272,12 +243,12 @@ button { font: inherit; color: inherit; }
   background: var(--surface);
   color: var(--accent);
   box-shadow: var(--shadow);
-  transition: transform 0.3s var(--ease);
+  transition: border-color 0.2s;
 }
 
 .avatar-badge svg { width: 18px; height: 18px; }
 
-.avatar:hover .avatar-badge { transform: rotate(-18deg) scale(1.08); }
+.avatar:hover .avatar-badge { border-color: var(--border-strong); }
 
 .kicker {
   margin: 0 0 4px;
@@ -305,8 +276,7 @@ button { font: inherit; color: inherit; }
 }
 
 [data-theme="night"] .name {
-  font-weight: 700;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 
 .tagline {
@@ -325,7 +295,7 @@ button { font: inherit; color: inherit; }
 
 .t-dev {
   font-family: var(--font-mono);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95em;
   color: var(--tag-dev);
 }
@@ -333,18 +303,16 @@ button { font: inherit; color: inherit; }
 .tagline .dot { margin: 0 4px; opacity: 0.6; }
 
 /* ============ Gruppi di link ============ */
-.group { margin-top: 28px; }
+.group { margin-top: 32px; }
 
 .group-label {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 0 4px 10px;
+  margin: 0 4px 12px;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--muted);
 }
 
@@ -360,7 +328,7 @@ button { font: inherit; color: inherit; }
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .card {
@@ -368,7 +336,7 @@ button { font: inherit; color: inherit; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform 0.25s var(--ease), border-color 0.2s, background-color 0.2s;
+  transition: transform 0.15s var(--ease), border-color 0.2s, background-color 0.2s;
 }
 
 .link,
@@ -376,8 +344,8 @@ button { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 66px;
-  padding: 10px 14px 10px 10px;
+  min-height: 68px;
+  padding: 12px 16px 12px 12px;
   text-decoration: none;
   color: inherit;
 }
@@ -389,15 +357,13 @@ a.link:hover,
   background: var(--surface-hover);
 }
 
-a.link:hover { transform: translateY(-2px); }
-
-a.link:active { transform: translateY(0) scale(0.99); }
+a.link:active { transform: scale(0.99); }
 
 .has-action {
   display: flex;
   align-items: center;
   min-height: 0;
-  padding: 0 10px 0 0;
+  padding: 0 12px 0 0;
 }
 
 .has-action .link-main {
@@ -462,7 +428,7 @@ button.link-main {
 }
 
 .link-title {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.3;
 }
@@ -536,8 +502,8 @@ a.link:hover .link-go {
 
 .repos {
   list-style: none;
-  margin: 0 10px;
-  padding: 10px 0 0;
+  margin: 0 12px;
+  padding: 12px 0 0;
   border-top: 1px dashed var(--border);
   display: grid;
   gap: 8px;
@@ -545,7 +511,7 @@ a.link:hover .link-go {
 
 .repo {
   position: relative;
-  padding: 12px 14px;
+  padding: 12px 16px;
   border-radius: 12px;
   border: 1px solid transparent;
   background: var(--chip);
@@ -566,8 +532,8 @@ a.link:hover .link-go {
 .repo-name {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--text);
   overflow-wrap: anywhere;
@@ -598,13 +564,10 @@ a.link:hover .link-go {
 .repo-fork {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  margin-left: 6px;
-  padding: 1px 7px 1px 5px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  gap: 4px;
+  margin-left: 8px;
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   color: var(--muted);
   vertical-align: 2px;
 }
@@ -652,7 +615,7 @@ a.link:hover .link-go {
   position: relative;
   z-index: 1;
   margin-left: auto;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--accent-text);
   text-decoration: none;
   text-underline-offset: 3px;
@@ -676,12 +639,12 @@ a.link:hover .link-go {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin: 10px;
-  padding: 10px;
+  margin: 12px;
+  padding: 12px;
   border-radius: 12px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--accent-text);
   text-decoration: none;
   transition: background-color 0.2s;
@@ -743,19 +706,8 @@ a.link:hover .link-go {
   }
 }
 
-.topbar,
-.hero,
-.group,
-.foot {
-  animation: rise 0.6s var(--ease) both;
-}
-
-.hero { animation-delay: 0.05s; }
-.group:nth-of-type(1) { animation-delay: 0.12s; }
-.group:nth-of-type(2) { animation-delay: 0.19s; }
-.group:nth-of-type(3) { animation-delay: 0.26s; }
-.group:nth-of-type(4) { animation-delay: 0.33s; }
-.foot { animation-delay: 0.4s; }
+/* Nascosto solo finché si aspetta Motion: la classe sparisce se Motion non arriva o dopo 1,5 s */
+.motion-ready [data-reveal] { opacity: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *,
